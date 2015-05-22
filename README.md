@@ -1,0 +1,1 @@
+new architecture for cocMaster!
