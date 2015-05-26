@@ -1,0 +1,50 @@
+#### User Position Trace
+##### 描述
+* 目前存在redis中
+##### WEB API
+```
+GET
+/webapi/upt_single
+```
+
+#####输入参数 请求头中的token 以及:
+|名称 | 类型 | 是否必填 | 传参位置 | 说明 |
+|------|-----|---------|---------|-------|
+|HTTP-ACCESS-TOKEN|String|Y|header|用户的access_token|
+|acc|String|Y|body|精度|
+|longitude|double|Y|body|经度|
+|latitude|double|Y|body|维度|
+|occurtime|timestamp|Y|body|位于该位置的时间|
+|status|int|Y|body|状态 0:取得订单时定位 1:确认送达时定位 2:通知用户时的位置 3:平时报告位置|
+
+
+
+#####返回参数
+```
+{
+	"err_code":"200",
+	"msg":"success",
+}
+```
+##### WEB API
+```
+GET
+/webapi/upt_batch
+```
+
+#####输入参数 请求头中的token 以及:
+|名称 | 类型 | 是否必填 | 传参位置 | 说明 |
+|------|-----|---------|---------|-------|
+|HTTP-ACCESS-TOKEN|String|Y|header|用户的token|
+|upt_list|list of single(不用token )|Y|body|一批地理位置|
+
+
+
+#####返回参数
+```
+{
+	"err_code":"200",
+	"msg":"success",
+}
+```
+
