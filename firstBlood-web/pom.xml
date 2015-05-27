@@ -6,12 +6,30 @@
 		<artifactId>firstBlood-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<artifactId>firstBlood-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
+	<properties>
+		<cocMaster.version>0.0.1-SNAPSHOT</cocMaster.version>
+	</properties>
 
 	<dependencies>
+		
+		<!-- util -->
+		<dependency>
+			<groupId>com.cocmaster</groupId>
+			<artifactId>firstBlood-util</artifactId>
+			<version>${cocMaster.version}</version>
+		</dependency>
+
+
+		<!-- add Impl here -->
+		<dependency>
+			<groupId>com.cocmaster</groupId>
+			<artifactId>firstBlood-register-impl</artifactId>
+			<version>${cocMaster.version}</version>
+		</dependency>
 
 	</dependencies>
 </project>
