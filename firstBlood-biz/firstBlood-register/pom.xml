@@ -11,6 +11,8 @@
 	
 	<artifactId>firstBlood-register</artifactId>
 	<packaging>jar</packaging>
+	<groupId>com.cocmaster</groupId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<name>firstBlood-register</name>
 
