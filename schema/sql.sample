@@ -1,0 +1,189 @@
+/** TABLE retailer
+**
+** PURPOSE
+**
+**   商家表，存放商家数据
+**   对于商家的理解，在众包模式下属于提供服务方，是所有订单产生源头。
+**   目前，主要指餐厅
+**  
+**
+** COLUMNS
+**
+**   id :  表主键，自增长
+**   name : 商家名
+**   phone : 商家电话
+**   address : 商家所在地址
+**   longitude : 经度
+**   latitude : 纬度
+**   owner_id : 商家经营者ID
+**   owner_name : 商家经营者名字
+**   owner_mobile : 商家经营者手机号
+**   city_id : 商家所在城市ID
+**   is_active : 软删除
+**               1 : 有效
+**               0 : 无效
+**   created_at : 创建时间
+**   updated_at : 更新时间
+**
+** NOTES
+*/
+CREATE TABLE `retailer` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(32) NOT NULL DEFAULT '' COMMENT '商家名称',
+    `phone` varchar(32) NOT NULL DEFAULT '' COMMENT '商家电话',
+    `address` varchar(128) NOT NULL DEFAULT '' COMMENT '商家地址',
+    `longitude` decimal(10,7) NOT NULL DEFAULT '0' COMMENT '经度',
+    `latitude` decimal(10,7) NOT NULL DEFAULT '0' COMMENT '纬度',
+    `owner_id` int(11) NOT NULL COMMENT '负责人ID',
+    `owner_name` varchar(32) NOT NULL DEFAULT '' COMMENT '负责人名字',
+    `owner_mobile` bigint(11) NOT NULL COMMENT '负责人手机',
+    `city_id` int(11) NOT NULL DEFAULT '0' COMMENT '所在城市',
+    `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '软删除 0: 无效; 1: 有效',
+    `created_at` datetime NOT NULL,
+    `updated_at` datetime NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `idx_station_name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/** TABLE retailer_restaurant_mapping
+**
+** PURPOSE
+**
+**   商家表，存放商家数据
+**   对于商家的理解，在众包模式下属于提供服务方，是所有订单产生源头。
+**   目前，主要指餐厅
+**  
+**
+** COLUMNS
+**
+**   id :  表主键，自增长
+**   retailer_id : 和商家表[retailer]关联
+**   ele_restaurant_id : 和饿了么主站餐厅关联. 因为当前业务只包括餐厅订单，所以只和主站餐厅数据关联。
+**   created_at : 创建时间
+**   is_active : 软删除
+**               1 : 有效
+**               0 : 无效
+**
+** NOTES
+*/
+CREATE TABLE `retailer_restaurant_mapping` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `retailer_id` int(11) NOT NULL COMMENT '和商家表关联',
+    `ele_restaurant_id` int(11) NOT NULL COMMENT '和饿了么主站餐厅关联',
+    `created_at` datetime NOT NULL,
+    `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '软删除 0: 无效; 1: 有效',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/** VIEW v_station
+**
+** PURPOSE
+**
+**   创建临时视图，逐步代替之前的station表
+**  
+**
+** COLUMNS
+**
+**   字段同station表
+**
+** NOTES
+*/
+CREATE VIEW `v_station` (
+    `id`,
+    `name`,
+    `phone`,
+    `address`,
+    `longitude`,
+    `latitude`,
+    `manager_id`,
+    `manager_mobile`,
+    `city_id`,
+    `status`,
+    `created_at`,
+    `updated_at`) 
+AS SELECT 
+    `retailer`.`id`,
+    `retailer`.`name`,
+    `retailer`.`phone`,
+    `retailer`.`address`,
+    `retailer`.`longitude`,
+    `retailer`.`latitude`,
+    `retailer`.`owner_id`,
+    `retailer`.`owner_mobile`,
+    `retailer`.`city_id`,
+    `retailer`.`is_active`,
+    `retailer`.`created_at`,
+    `retailer`.`updated_at` 
+FROM `retailer`;
+
+/** TABLE deliverer_authorization
+**
+** PURPOSE
+**
+**   授权表，记录了当前所有授权类型
+**
+**
+** COLUMNS
+**
+**   id :  表主键，自增长
+**   name : 认证的名字
+**   description : 对认证的描述
+**   is_active : 软删除
+**               1 : 有效
+**               0 : 无效
+**
+** NOTES
+*/
+CREATE TABLE `deliverer_authorization` (
+    `id` int(11) NOT NULL,
+    `name` varchar(32) NOT NULL COMMENT '认证名称',
+    `description` varchar(128) NOT NULL DEFAULT '' COMMENT '对认证的描述',
+    `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '软删除',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/**
+## 认证申请 deliverer_authorization_apply
+**
+** PURPOSE
+**
+**   配送员申请授权记录表
+**
+**
+** COLUMNS
+**
+**   id :  表主键，自增长
+**   deliverer_id : 配送员ID
+**   deliverer_name : 配送员名字
+**   deliverer_mobile : 配送员手机号
+**   deliverer_auth_id : 申请认证的ID
+**   status : 申请流程当前所处的状态
+**   created_at : 创建时间
+**   updated_at : 更新时间
+**   is_active : 软删除
+**               1 : 有效
+**               0 : 无效
+**   reject_reason : 驳回申请的原因
+**   operator_user_id : 审核申请人的ID
+**   operator_user_name : 审核申请人的名字
+**   operator_user_mobile : 审核申请人的手机号
+**
+** NOTES
+*/
+
+CREATE TABLE `deliverer_authorization_apply` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `deliverer_id` int(11) NOT NULL COMMENT '配送员ID',
+    `deliverer_name` varchar(32) NOT NULL DEFAULT '' COMMENT '配送员名字',
+    `deliverer_mobile` bigint(11) NOT NULL COMMENT '配送员手机号',
+    `deliverer_auth_id` int(11) NOT NULL COMMENT '申请认证的ID',
+    `status` tinyint(4) NOT NULL COMMENT '申请流程当前所处的状态 ',
+    `created_at` datetime NOT NULL COMMENT '创建时间',
+    `updated_at` datetime NOT NULL COMMENT '更新时间',
+    `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '软删除',
+    `reject_reason` varchar(128) NOT NULL DEFAULT '' COMMENT '驳回申请原因',
+    `operator_user_id` int(11) NOT NULL DEFAULT 0 COMMENT '审核申请人的ID',
+    `operator_user_name` varchar(32) NOT NULL DEFAULT '' COMMENT '审核申请人的名字',
+    `operator_user_mobile` bigint(11) NOT NULL DEFAULT 0 COMMENT '审核申请人的手机号',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
