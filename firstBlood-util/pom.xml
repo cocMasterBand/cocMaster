@@ -8,8 +8,9 @@
 		<groupId>com.cocmaster</groupId>
 		<artifactId>firstBlood-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../firstBlood-base/pom.xml</relativePath>
 	</parent>
-
 	<artifactId>firstBlood-util</artifactId>
+	<packaging>jar</packaging>
 
 </project>

@@ -6,9 +6,12 @@
 		<groupId>com.cocmaster</groupId>
 		<artifactId>firstBlood-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../../firstBlood-base/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>firstBlood-register-impl</artifactId>
+	<groupId>com.cocmaster</groupId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>firstBlood-register-impl</name>
