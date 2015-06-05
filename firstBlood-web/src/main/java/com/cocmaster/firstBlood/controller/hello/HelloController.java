@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cocmaster.firstBlood_register.ISayHiService;
+import com.cocmaster.firstBlood_register.service.ISayHiService;
 
 
 @Controller
