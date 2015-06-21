@@ -1,36 +1,35 @@
 package com.cocmaster.firstBlood_base_common.model;
 
 /**
- * @author di
- * 系统中的部落
+ * @author di 系统中的部落
  * 
  * */
 public class Clan {
-	
+
 	private int clanId;
-	
-	//coc官方的唯一标识
+
+	// coc官方的唯一标识
 	private String clanTag;
-	
-	//部落的状态 需要申请 关闭 任何人可入
-	private int type;
-	
-	//部落站频率
+
+	// 部落的状态 未知0 需要申请1 关闭2 任何人可入3
+	private int clanType;
+
+	// 部落站频率 未知0 ALWAYS1 NEVER2 2/WEEK 2 1/WEEK 3 RARELY 4
 	private int warFrequency;
-	
-	//部落的人数
+
+	// 部落的人数
 	private int membersCount;
-	
-	//部落奖杯
+
+	// 部落奖杯
 	private int totalPoints;
-	
-	//部落站胜利次数
+
+	// 部落站胜利次数
 	private int warsWon;
-	
-	//部落站加入门槛奖杯数
+
+	// 部落站加入门槛奖杯数
 	private int requiredTrophies;
-	
-	//部落所在位置
+
+	// 部落所在位置 0CHINA 1 OTHERS
 	private int location;
 
 	public int getClanId() {
@@ -49,12 +48,12 @@ public class Clan {
 		this.clanTag = clanTag;
 	}
 
-	public int getType() {
-		return type;
+	public int getClanType() {
+		return clanType;
 	}
 
-	public void setType(int type) {
-		this.type = type;
+	public void setClanType(int clanType) {
+		this.clanType = clanType;
 	}
 
 	public int getWarFrequency() {
@@ -107,13 +106,11 @@ public class Clan {
 
 	@Override
 	public String toString() {
-		return "Clan [clanId=" + clanId + ", clanTag=" + clanTag + ", type="
-				+ type + ", warFrequency=" + warFrequency + ", membersCount="
-				+ membersCount + ", totalPoints=" + totalPoints + ", warsWon="
-				+ warsWon + ", requiredTrophies=" + requiredTrophies
-				+ ", location=" + location + "]";
+		return "Clan [clanId=" + clanId + ", clanTag=" + clanTag
+				+ ", clanType=" + clanType + ", warFrequency=" + warFrequency
+				+ ", membersCount=" + membersCount + ", totalPoints="
+				+ totalPoints + ", warsWon=" + warsWon + ", requiredTrophies="
+				+ requiredTrophies + ", location=" + location + "]";
 	}
-	
-	
-	
+
 }
