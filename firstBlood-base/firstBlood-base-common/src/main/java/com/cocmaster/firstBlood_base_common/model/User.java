@@ -6,6 +6,7 @@ import java.sql.Timestamp;
  * @author di
  * 用户类
  * 密码+salt 拼接后 md5
+ * salt目前写死 原谅这么蠢 #cocMaster666
  * */
 public class User {
 	//用户id 
