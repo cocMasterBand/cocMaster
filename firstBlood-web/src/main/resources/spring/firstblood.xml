@@ -5,6 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
-	<bean id="sayHiService" class="com.cocmaster.firstBlood_register_impl.SayHiServiceImpl"></bean>
+	<bean id="sayHiService" class="com.cocmaster.firstBlood_register_impl.serviceimpl.SayHiServiceImpl"></bean>
 	
 </beans>

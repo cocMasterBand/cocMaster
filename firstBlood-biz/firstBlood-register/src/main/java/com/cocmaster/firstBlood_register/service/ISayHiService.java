@@ -1,4 +1,4 @@
-package com.cocmaster.firstBlood_register;
+package com.cocmaster.firstBlood_register.service;
 
 import org.springframework.stereotype.Service;
 

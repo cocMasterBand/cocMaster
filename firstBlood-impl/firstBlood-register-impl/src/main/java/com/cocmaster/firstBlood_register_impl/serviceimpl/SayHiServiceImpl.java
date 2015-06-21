@@ -1,8 +1,8 @@
-package com.cocmaster.firstBlood_register_impl;
+package com.cocmaster.firstBlood_register_impl.serviceimpl;
 
 import org.springframework.stereotype.Service;
 
-import com.cocmaster.firstBlood_register.ISayHiService;
+import com.cocmaster.firstBlood_register.service.ISayHiService;
 
 
 /**
