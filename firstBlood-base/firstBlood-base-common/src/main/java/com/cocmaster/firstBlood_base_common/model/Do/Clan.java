@@ -1,4 +1,4 @@
-package com.cocmaster.firstBlood_base_common.model;
+package com.cocmaster.firstBlood_base_common.model.Do;
 
 /**
  * @author di 系统中的部落
@@ -7,6 +7,9 @@ package com.cocmaster.firstBlood_base_common.model;
 public class Clan {
 
 	private int clanId;
+	
+	//部落的昵称
+	private String clanNameString;
 
 	// coc官方的唯一标识
 	private String clanTag;
@@ -14,7 +17,7 @@ public class Clan {
 	// 部落的状态 未知0 需要申请1 关闭2 任何人可入3
 	private int clanType;
 
-	// 部落站频率 未知0 ALWAYS1 NEVER2 2/WEEK 2 1/WEEK 3 RARELY 4
+	// 部落站频率 未知0 ALWAYS1 NEVER2 2/WEEK 3 1/WEEK 4 RARELY 5
 	private int warFrequency;
 
 	// 部落的人数

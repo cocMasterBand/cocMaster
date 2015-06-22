@@ -1,4 +1,4 @@
-package com.cocmaster.firstBlood_base_common.model;
+package com.cocmaster.firstBlood_base_common.model.Do;
 
 
 /**
