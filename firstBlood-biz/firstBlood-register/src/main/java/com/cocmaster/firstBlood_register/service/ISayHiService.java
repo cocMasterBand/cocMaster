@@ -17,4 +17,9 @@ public interface ISayHiService {
 	 * 
 	 * */
 	public String sayHi(String name);
+	
+	/**
+	 * @author di
+	 * 
+	 * */
 }

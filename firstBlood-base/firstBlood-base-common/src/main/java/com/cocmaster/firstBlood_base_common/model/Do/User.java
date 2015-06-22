@@ -1,4 +1,4 @@
-package com.cocmaster.firstBlood_base_common.model;
+package com.cocmaster.firstBlood_base_common.model.Do;
 
 import java.sql.Timestamp;
 
@@ -24,7 +24,7 @@ public class User {
 	//salt
 	private String salt;
 	
-	//MD5后的密码
+	//加盐MD5后的密码
 	private String passwd;
 	
 	//用户种类	这里是指在部落中的(长老.首领 副手...)

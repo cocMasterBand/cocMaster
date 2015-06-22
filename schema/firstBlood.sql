@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
 	`userId` int(11) NOT NULL AUTO_INCREMENT,
 	`openId` int(11) NOT NULL COMMENT '微信的openid',
@@ -17,11 +18,13 @@ CREATE TABLE `user` (
 
 
 
+DROP TABLE IF EXISTS `clan`;
 CREATE TABLE `clan` (
 	`clanId` int(11) NOT NULL AUTO_INCREMENT,
+	`clanNameString` varchar(32) NOT NULL DEFAULT '' COMMENT '部落的昵称',
 	`clanTag` varchar(64) NOT NULL DEFAULT '' COMMENT 'coc官方的唯一标识',
 	`clanType` tinyint(4) NOT NULL DEFAULT 0 COMMENT '部落的状态 未知0 需要申请1 关闭2 任何人可入3',
-	`warFrequency` tinyint(4) NOT NULL DEFAULT 0 COMMENT '部落站频率 未知0 ALWAYS1 NEVER2 2/WEEK 2 1/WEEK 3 RARELY 4',
+	`warFrequency` tinyint(4) NOT NULL DEFAULT 0 COMMENT '部落站频率 未知0 ALWAYS1 NEVER2 2/WEEK 3 1/WEEK 4 RARELY 5',
 	`membersCount` int(11) NOT NULL DEFAULT 0 COMMENT '部落的人数',
 	`totalPoints` int(11) NOT NULL DEFAULT 0 COMMENT '部落奖杯',
 	`warsWon` int(11) NOT NULL DEFAULT 0 COMMENT '部落站胜利次数',
