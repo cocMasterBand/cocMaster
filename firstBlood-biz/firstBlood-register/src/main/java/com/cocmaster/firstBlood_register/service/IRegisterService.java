@@ -7,7 +7,7 @@ package com.cocmaster.firstBlood_register.service;
 public interface IRegisterService {
 	/**
 	 * 发送验证码给用户
-	 * 然后将
+	 * 然后将用户手机号和
 	 * */
 	public int sendPhoneCheckKey();
 	

@@ -14,6 +14,8 @@ public class ReturnKey {
 	public static final int RETURN_STATUS_NEED_LOGIN = 30001;
 	
 	//注册相关
-	//手机号验证不正确
+	//手机号验证码不正确
 	public static final int RETURN_STATUS_PHONECHECK_ERROR = 40001;
+	//手机号格式不正确
+	public static final int RETURN_STATUS_PHONE_FORMAT_ERROR = 40002;
 }
