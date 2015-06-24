@@ -3,7 +3,7 @@ package com.cocmaster.firstBlood_register_impl.model;
 
 /**
  * @author di
- * 是dto, 和前端传来的值直接1对1匹配
+ * 是do, 和前端传来的值直接1对1匹配
  * 这里面有password
  * 除了注册 避免使用这个类 避免暴露用户密码 
  * 想了想 还是前端直接加盐然后md5后将字符串扔过来把 安全些
