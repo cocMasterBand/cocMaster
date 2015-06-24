@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS `cocmaster`;
+CREATE DATABASE `cocmaster`;
+USE `cocmaster`;
+
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
 	`userId` int(11) NOT NULL AUTO_INCREMENT,

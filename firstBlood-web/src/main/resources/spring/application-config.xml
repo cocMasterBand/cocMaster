@@ -10,4 +10,7 @@
             base-package="org.springframework.samples.service"/>  -->
 	<context:component-scan
             base-package="com.cocmaster.firstBlood.controller*"/>
+	<context:component-scan
+            base-package="com.cocmaster.firstBlood_register_impl.serviceimpl*"/>
+            
 </beans>
