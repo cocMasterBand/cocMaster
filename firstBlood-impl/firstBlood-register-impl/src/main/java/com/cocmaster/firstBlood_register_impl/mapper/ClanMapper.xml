@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cocmaster.firstBlood_register_impl.dao.ClanMapper" >
-  <resultMap id="BaseResultMap" type="com.cocmaster.firstBlood_base_common.model.temp.Clan" >
-    <id column="clanId" property="clanid" jdbcType="INTEGER" />
-    <result column="clanNameString" property="clannamestring" jdbcType="VARCHAR" />
-    <result column="clanTag" property="clantag" jdbcType="VARCHAR" />
-    <result column="clanType" property="clantype" jdbcType="TINYINT" />
-    <result column="warFrequency" property="warfrequency" jdbcType="TINYINT" />
-    <result column="membersCount" property="memberscount" jdbcType="INTEGER" />
-    <result column="totalPoints" property="totalpoints" jdbcType="INTEGER" />
-    <result column="warsWon" property="warswon" jdbcType="INTEGER" />
-    <result column="requiredTrophies" property="requiredtrophies" jdbcType="INTEGER" />
+  <resultMap id="BaseResultMap" type="Clan" >
+    <id column="clanId" property="clanId" jdbcType="INTEGER" />
+    <result column="clanNameString" property="clanNameString" jdbcType="VARCHAR" />
+    <result column="clanTag" property="clanTag" jdbcType="VARCHAR" />
+    <result column="clanType" property="clanType" jdbcType="TINYINT" />
+    <result column="warFrequency" property="warFrequency" jdbcType="TINYINT" />
+    <result column="membersCount" property="membersCount" jdbcType="INTEGER" />
+    <result column="totalPoints" property="totalPoints" jdbcType="INTEGER" />
+    <result column="warsWon" property="warsWon" jdbcType="INTEGER" />
+    <result column="requiredTrophies" property="requiredTrophies" jdbcType="INTEGER" />
     <result column="location" property="location" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -21,50 +21,50 @@
     select 
     <include refid="Base_Column_List" />
     from clan
-    where clanId = #{clanid,jdbcType=INTEGER}
+    where clanId = #{clanId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from clan
-    where clanId = #{clanid,jdbcType=INTEGER}
+    where clanId = #{clanId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cocmaster.firstBlood_base_common.model.temp.Clan" >
+  <insert id="insert" parameterType="Clan" >
     insert into clan (clanId, clanNameString, clanTag, 
       clanType, warFrequency, membersCount, 
       totalPoints, warsWon, requiredTrophies, 
       location)
-    values (#{clanid,jdbcType=INTEGER}, #{clannamestring,jdbcType=VARCHAR}, #{clantag,jdbcType=VARCHAR}, 
-      #{clantype,jdbcType=TINYINT}, #{warfrequency,jdbcType=TINYINT}, #{memberscount,jdbcType=INTEGER}, 
-      #{totalpoints,jdbcType=INTEGER}, #{warswon,jdbcType=INTEGER}, #{requiredtrophies,jdbcType=INTEGER}, 
+    values (#{clanId,jdbcType=INTEGER}, #{clanNameString,jdbcType=VARCHAR}, #{clanTag,jdbcType=VARCHAR}, 
+      #{clanType,jdbcType=TINYINT}, #{warFrequency,jdbcType=TINYINT}, #{membersCount,jdbcType=INTEGER}, 
+      #{totalPoints,jdbcType=INTEGER}, #{warsWon,jdbcType=INTEGER}, #{requiredTrophies,jdbcType=INTEGER}, 
       #{location,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.cocmaster.firstBlood_base_common.model.temp.Clan" >
+  <insert id="insertSelective" parameterType="Clan" >
     insert into clan
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="clanid != null" >
+      <if test="clanId != null" >
         clanId,
       </if>
-      <if test="clannamestring != null" >
+      <if test="clanNameString != null" >
         clanNameString,
       </if>
-      <if test="clantag != null" >
+      <if test="clanTag != null" >
         clanTag,
       </if>
-      <if test="clantype != null" >
+      <if test="clanType != null" >
         clanType,
       </if>
-      <if test="warfrequency != null" >
+      <if test="warFrequency != null" >
         warFrequency,
       </if>
-      <if test="memberscount != null" >
+      <if test="membersCount != null" >
         membersCount,
       </if>
-      <if test="totalpoints != null" >
+      <if test="totalPoints != null" >
         totalPoints,
       </if>
-      <if test="warswon != null" >
+      <if test="warsWon != null" >
         warsWon,
       </if>
-      <if test="requiredtrophies != null" >
+      <if test="requiredTrophies != null" >
         requiredTrophies,
       </if>
       <if test="location != null" >
@@ -72,82 +72,82 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="clanid != null" >
-        #{clanid,jdbcType=INTEGER},
+      <if test="clanId != null" >
+        #{clanId,jdbcType=INTEGER},
       </if>
-      <if test="clannamestring != null" >
-        #{clannamestring,jdbcType=VARCHAR},
+      <if test="clanNameString != null" >
+        #{clanNameString,jdbcType=VARCHAR},
       </if>
-      <if test="clantag != null" >
-        #{clantag,jdbcType=VARCHAR},
+      <if test="clanTag != null" >
+        #{clanTag,jdbcType=VARCHAR},
       </if>
-      <if test="clantype != null" >
-        #{clantype,jdbcType=TINYINT},
+      <if test="clanType != null" >
+        #{clanType,jdbcType=TINYINT},
       </if>
-      <if test="warfrequency != null" >
-        #{warfrequency,jdbcType=TINYINT},
+      <if test="warFrequency != null" >
+        #{warFrequency,jdbcType=TINYINT},
       </if>
-      <if test="memberscount != null" >
-        #{memberscount,jdbcType=INTEGER},
+      <if test="membersCount != null" >
+        #{membersCount,jdbcType=INTEGER},
       </if>
-      <if test="totalpoints != null" >
-        #{totalpoints,jdbcType=INTEGER},
+      <if test="totalPoints != null" >
+        #{totalPoints,jdbcType=INTEGER},
       </if>
-      <if test="warswon != null" >
-        #{warswon,jdbcType=INTEGER},
+      <if test="warsWon != null" >
+        #{warsWon,jdbcType=INTEGER},
       </if>
-      <if test="requiredtrophies != null" >
-        #{requiredtrophies,jdbcType=INTEGER},
+      <if test="requiredTrophies != null" >
+        #{requiredTrophies,jdbcType=INTEGER},
       </if>
       <if test="location != null" >
         #{location,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cocmaster.firstBlood_base_common.model.temp.Clan" >
+  <update id="updateByPrimaryKeySelective" parameterType="Clan" >
     update clan
     <set >
-      <if test="clannamestring != null" >
-        clanNameString = #{clannamestring,jdbcType=VARCHAR},
+      <if test="clanNameString != null" >
+        clanNameString = #{clanNameString,jdbcType=VARCHAR},
       </if>
-      <if test="clantag != null" >
-        clanTag = #{clantag,jdbcType=VARCHAR},
+      <if test="clanTag != null" >
+        clanTag = #{clanTag,jdbcType=VARCHAR},
       </if>
-      <if test="clantype != null" >
-        clanType = #{clantype,jdbcType=TINYINT},
+      <if test="clanType != null" >
+        clanType = #{clanType,jdbcType=TINYINT},
       </if>
-      <if test="warfrequency != null" >
-        warFrequency = #{warfrequency,jdbcType=TINYINT},
+      <if test="warFrequency != null" >
+        warFrequency = #{warFrequency,jdbcType=TINYINT},
       </if>
-      <if test="memberscount != null" >
-        membersCount = #{memberscount,jdbcType=INTEGER},
+      <if test="membersCount != null" >
+        membersCount = #{membersCount,jdbcType=INTEGER},
       </if>
-      <if test="totalpoints != null" >
-        totalPoints = #{totalpoints,jdbcType=INTEGER},
+      <if test="totalPoints != null" >
+        totalPoints = #{totalPoints,jdbcType=INTEGER},
       </if>
-      <if test="warswon != null" >
-        warsWon = #{warswon,jdbcType=INTEGER},
+      <if test="warsWon != null" >
+        warsWon = #{warsWon,jdbcType=INTEGER},
       </if>
-      <if test="requiredtrophies != null" >
-        requiredTrophies = #{requiredtrophies,jdbcType=INTEGER},
+      <if test="requiredTrophies != null" >
+        requiredTrophies = #{requiredTrophies,jdbcType=INTEGER},
       </if>
       <if test="location != null" >
         location = #{location,jdbcType=INTEGER},
       </if>
     </set>
-    where clanId = #{clanid,jdbcType=INTEGER}
+    where clanId = #{clanId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cocmaster.firstBlood_base_common.model.temp.Clan" >
+  <update id="updateByPrimaryKey" parameterType="Clan" >
     update clan
-    set clanNameString = #{clannamestring,jdbcType=VARCHAR},
-      clanTag = #{clantag,jdbcType=VARCHAR},
-      clanType = #{clantype,jdbcType=TINYINT},
-      warFrequency = #{warfrequency,jdbcType=TINYINT},
-      membersCount = #{memberscount,jdbcType=INTEGER},
-      totalPoints = #{totalpoints,jdbcType=INTEGER},
-      warsWon = #{warswon,jdbcType=INTEGER},
-      requiredTrophies = #{requiredtrophies,jdbcType=INTEGER},
+    set clanNameString = #{clanNameString,jdbcType=VARCHAR},
+      clanTag = #{clanTag,jdbcType=VARCHAR},
+      clanType = #{clanType,jdbcType=TINYINT},
+      warFrequency = #{warFrequency,jdbcType=TINYINT},
+      membersCount = #{membersCount,jdbcType=INTEGER},
+      totalPoints = #{totalPoints,jdbcType=INTEGER},
+      warsWon = #{warsWon,jdbcType=INTEGER},
+      requiredTrophies = #{requiredTrophies,jdbcType=INTEGER},
       location = #{location,jdbcType=INTEGER}
-    where clanId = #{clanid,jdbcType=INTEGER}
+    where clanId = #{clanId,jdbcType=INTEGER}
   </update>
 </mapper>
