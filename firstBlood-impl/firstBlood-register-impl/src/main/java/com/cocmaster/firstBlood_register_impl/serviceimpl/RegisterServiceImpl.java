@@ -38,7 +38,7 @@ public class RegisterServiceImpl implements IRegisterService{
 		
 		//判断用户注册电话格式是否正确
 		if(!phoneCheck.PhoneFormat(phone)){}
-			throw new ServiceException();
+			//throw new ServiceException();
 		
 		//判断该号码是否已经被注册过
 		int count = userMapper.checkUserExist(phone);

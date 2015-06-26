@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../../firstBlood-base/pom.xml</relativePath>
 	</parent>
-	
+
 	<artifactId>firstBlood-register</artifactId>
 	<packaging>jar</packaging>
 	<groupId>com.cocmaster</groupId>
