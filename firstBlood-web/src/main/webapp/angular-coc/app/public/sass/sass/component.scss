@@ -1,0 +1,37 @@
+/* 组件 scss 文件 */
+
+/* 按钮组件 */
+.cbtn{
+  text-align: center;
+  background: $grey-light;
+  color: $text-color;
+  border: 1px solid #DDD;
+  border-radius: $border-radius;
+  font-size: $base-font-size;
+  transition: background $sec $type;
+  outline: 0;
+}
+.cbtn:active{
+  background: darken($grey-light, 10%);
+  box-shadow: inset 0px 0px 5px #C5C5C5;
+}
+
+.red{
+  background: #F56D6B;
+  color: #FFF;
+}
+.blue{
+  background: #1588FF;
+  color: #FFF;
+}
+
+.disabled{
+  background: #e8ecf0;
+  color: #acacad;
+}
+
+/* 表单组件 */
+form .form-group{
+  position: relative;
+  margin: $spacing-unit/3 0;
+}
