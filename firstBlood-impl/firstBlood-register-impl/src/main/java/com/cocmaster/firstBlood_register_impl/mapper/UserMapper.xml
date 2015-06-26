@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cocmaster.firstBlood_register_impl.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.cocmaster.firstBlood_base_common.model.temp.User" >
-    <id column="userId" property="userid" jdbcType="INTEGER" />
-    <result column="openId" property="openid" jdbcType="INTEGER" />
+  <resultMap id="BaseResultMap" type="User" >
+    <id column="userId" property="userId" jdbcType="INTEGER" />
+    <result column="openId" property="openId" jdbcType="INTEGER" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="isPhoneCheck" property="isphonecheck" jdbcType="TINYINT" />
+    <result column="isPhoneCheck" property="isPhoneCheck" jdbcType="TINYINT" />
     <result column="salt" property="salt" jdbcType="VARCHAR" />
     <result column="passwd" property="passwd" jdbcType="VARCHAR" />
-    <result column="userStatus" property="userstatus" jdbcType="TINYINT" />
-    <result column="clanId" property="clanid" jdbcType="INTEGER" />
-    <result column="strongHoldLevel" property="strongholdlevel" jdbcType="TINYINT" />
+    <result column="userStatus" property="userStatus" jdbcType="TINYINT" />
+    <result column="clanId" property="clanId" jdbcType="INTEGER" />
+    <result column="strongHoldLevel" property="strongHoldLevel" jdbcType="TINYINT" />
     <result column="leagueLevel" property="leaguelevel" jdbcType="INTEGER" />
     <result column="troops" property="troops" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
     userId, openId, phone, isPhoneCheck, salt, passwd, userStatus, clanId, strongHoldLevel, 
@@ -24,37 +24,37 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where userId = #{userid,jdbcType=INTEGER}
+    where userId = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
-    where userId = #{userid,jdbcType=INTEGER}
+    where userId = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.cocmaster.firstBlood_base_common.model.temp.User" >
+  <insert id="insert" parameterType="User" >
     insert into user (userId, openId, phone, 
       isPhoneCheck, salt, passwd, 
       userStatus, clanId, strongHoldLevel, 
       leagueLevel, troops, createTime, 
       updateTime)
-    values (#{userid,jdbcType=INTEGER}, #{openid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
-      #{isphonecheck,jdbcType=TINYINT}, #{salt,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
-      #{userstatus,jdbcType=TINYINT}, #{clanid,jdbcType=INTEGER}, #{strongholdlevel,jdbcType=TINYINT}, 
-      #{leaguelevel,jdbcType=INTEGER}, #{troops,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{updatetime,jdbcType=TIMESTAMP})
+    values (#{userId,jdbcType=INTEGER}, #{openId,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
+      #{isPhoneCheck,jdbcType=TINYINT}, #{salt,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
+      #{userStatus,jdbcType=TINYINT}, #{clanId,jdbcType=INTEGER}, #{strongHoldLevel,jdbcType=TINYINT}, 
+      #{leaguelevel,jdbcType=INTEGER}, #{troops,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.cocmaster.firstBlood_base_common.model.temp.User" >
+  <insert id="insertSelective" parameterType="User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
+      <if test="userId != null" >
         userId,
       </if>
-      <if test="openid != null" >
+      <if test="openId != null" >
         openId,
       </if>
       <if test="phone != null" >
         phone,
       </if>
-      <if test="isphonecheck != null" >
+      <if test="isPhoneCheck != null" >
         isPhoneCheck,
       </if>
       <if test="salt != null" >
@@ -63,13 +63,13 @@
       <if test="passwd != null" >
         passwd,
       </if>
-      <if test="userstatus != null" >
+      <if test="userStatus != null" >
         userStatus,
       </if>
-      <if test="clanid != null" >
+      <if test="clanId != null" >
         clanId,
       </if>
-      <if test="strongholdlevel != null" >
+      <if test="strongHoldLevel != null" >
         strongHoldLevel,
       </if>
       <if test="leaguelevel != null" >
@@ -78,25 +78,25 @@
       <if test="troops != null" >
         troops,
       </if>
-      <if test="createtime != null" >
+      <if test="createTime != null" >
         createTime,
       </if>
-      <if test="updatetime != null" >
+      <if test="updateTime != null" >
         updateTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        #{userid,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
-      <if test="openid != null" >
-        #{openid,jdbcType=INTEGER},
+      <if test="openId != null" >
+        #{openId,jdbcType=INTEGER},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="isphonecheck != null" >
-        #{isphonecheck,jdbcType=TINYINT},
+      <if test="isPhoneCheck != null" >
+        #{isPhoneCheck,jdbcType=TINYINT},
       </if>
       <if test="salt != null" >
         #{salt,jdbcType=VARCHAR},
@@ -104,14 +104,14 @@
       <if test="passwd != null" >
         #{passwd,jdbcType=VARCHAR},
       </if>
-      <if test="userstatus != null" >
-        #{userstatus,jdbcType=TINYINT},
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=TINYINT},
       </if>
-      <if test="clanid != null" >
-        #{clanid,jdbcType=INTEGER},
+      <if test="clanId != null" >
+        #{clanId,jdbcType=INTEGER},
       </if>
-      <if test="strongholdlevel != null" >
-        #{strongholdlevel,jdbcType=TINYINT},
+      <if test="strongHoldLevel != null" >
+        #{strongHoldLevel,jdbcType=TINYINT},
       </if>
       <if test="leaguelevel != null" >
         #{leaguelevel,jdbcType=INTEGER},
@@ -119,25 +119,25 @@
       <if test="troops != null" >
         #{troops,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cocmaster.firstBlood_base_common.model.temp.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="User" >
     update user
     <set >
-      <if test="openid != null" >
-        openId = #{openid,jdbcType=INTEGER},
+      <if test="openId != null" >
+        openId = #{openId,jdbcType=INTEGER},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="isphonecheck != null" >
-        isPhoneCheck = #{isphonecheck,jdbcType=TINYINT},
+      <if test="isPhoneCheck != null" >
+        isPhoneCheck = #{isPhoneCheck,jdbcType=TINYINT},
       </if>
       <if test="salt != null" >
         salt = #{salt,jdbcType=VARCHAR},
@@ -145,14 +145,14 @@
       <if test="passwd != null" >
         passwd = #{passwd,jdbcType=VARCHAR},
       </if>
-      <if test="userstatus != null" >
-        userStatus = #{userstatus,jdbcType=TINYINT},
+      <if test="userStatus != null" >
+        userStatus = #{userStatus,jdbcType=TINYINT},
       </if>
-      <if test="clanid != null" >
-        clanId = #{clanid,jdbcType=INTEGER},
+      <if test="clanId != null" >
+        clanId = #{clanId,jdbcType=INTEGER},
       </if>
-      <if test="strongholdlevel != null" >
-        strongHoldLevel = #{strongholdlevel,jdbcType=TINYINT},
+      <if test="strongHoldLevel != null" >
+        strongHoldLevel = #{strongHoldLevel,jdbcType=TINYINT},
       </if>
       <if test="leaguelevel != null" >
         leagueLevel = #{leaguelevel,jdbcType=INTEGER},
@@ -160,29 +160,29 @@
       <if test="troops != null" >
         troops = #{troops,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null" >
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatetime != null" >
-        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null" >
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where userId = #{userid,jdbcType=INTEGER}
+    where userId = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cocmaster.firstBlood_base_common.model.temp.User" >
+  <update id="updateByPrimaryKey" parameterType="User" >
     update user
-    set openId = #{openid,jdbcType=INTEGER},
+    set openId = #{openId,jdbcType=INTEGER},
       phone = #{phone,jdbcType=VARCHAR},
-      isPhoneCheck = #{isphonecheck,jdbcType=TINYINT},
+      isPhoneCheck = #{isPhoneCheck,jdbcType=TINYINT},
       salt = #{salt,jdbcType=VARCHAR},
       passwd = #{passwd,jdbcType=VARCHAR},
-      userStatus = #{userstatus,jdbcType=TINYINT},
-      clanId = #{clanid,jdbcType=INTEGER},
-      strongHoldLevel = #{strongholdlevel,jdbcType=TINYINT},
+      userStatus = #{userStatus,jdbcType=TINYINT},
+      clanId = #{clanId,jdbcType=INTEGER},
+      strongHoldLevel = #{strongHoldLevel,jdbcType=TINYINT},
       leagueLevel = #{leaguelevel,jdbcType=INTEGER},
       troops = #{troops,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      updateTime = #{updatetime,jdbcType=TIMESTAMP}
-    where userId = #{userid,jdbcType=INTEGER}
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP}
+    where userId = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -24,10 +24,12 @@
 			<artifactId>firstBlood-register</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.cocmaster</groupId>
 			<artifactId>firstBlood-base-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 	</dependencies>
 </project>

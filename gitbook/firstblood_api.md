@@ -77,6 +77,7 @@ POST
 |------|-----|---------|---------|-------|
 |phone|String|Y|body|用户的手机号|
 |checkMsg|long|Y|body|用户的验证码信息|
+|passwd|String|Y|body|用户密码加盐后md5值
 
 ###返回参数
 ```

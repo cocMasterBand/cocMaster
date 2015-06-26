@@ -16,7 +16,7 @@ public class SayHiServiceImpl implements ISayHiService{
 
 	public String sayHi(String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("hi there, here si cocMaster.\n");
+		sb.append("hi there, here is cocMaster.\n");
 		sb.append(String.format("just having fun %s!", name));
 		return sb.toString();
 	}
