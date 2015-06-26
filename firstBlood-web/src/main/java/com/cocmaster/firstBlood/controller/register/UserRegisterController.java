@@ -1,4 +1,4 @@
-package com.cocmaster.firstBlood.controller.hello;
+package com.cocmaster.firstBlood.controller.register;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
