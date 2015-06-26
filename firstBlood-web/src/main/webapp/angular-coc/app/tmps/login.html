@@ -1,0 +1,38 @@
+<h1 class="lg-pgtitle">立即注册加入 CoC 联盟</h1>
+
+<div class="lg-lgbox">
+  <div class="lg-headbar">
+    <ul class="clr">
+      <li class="lg-hederbar-ele-1"></li>
+      <li class="lg-hederbar-ele-2"></li>
+      <li class="lg-hederbar-ele-3"></li>
+      <li class="lg-hederbar-ele-4"></li>
+      <li class="lg-hederbar-ele-5"></li>
+      <li class="lg-hederbar-ele-6"></li>
+    </ul>
+    <div class="lg-board">
+      <h1>只需几秒即可完成注册</h1>
+      <p class="lg-tip">{{msg}}</p>
+    </div>
+  </div>
+  <div class="lg-form">
+    <form>
+      <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input type="text" name="phone" placeholder="手机号" ng-model="register.phone"/>
+      </div>
+      <div class="clr form-group">
+        <i class="fa fa-mobile"></i>
+        <input class="valify-box" type="text" name="smscode" ng-model="register.smscode" placeholder="验证码"/>
+        <input type="checkbox" ng-model="checked" ng-hide="true">
+        <button class="cbtn valify-btn" ng-class="cls=checked?'disabled':''" ng-click="sendMsg(register.phone);" ng-disabled="checked" type="button">{{txt}}</button>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="psd" placeholder="密码" ng-model="register.psd"/>
+      </div>
+      <input type="checkbox" ng-model="subChecked" ng-hide="true">
+      <input class="cbtn red" type="submit" ng-class="cls=subChecked?'disabled':''" value="{{subtxt}}" ng-click="submit(register)" ng-disabled="subChecked"/>
+    </form>
+  </div>
+</div>

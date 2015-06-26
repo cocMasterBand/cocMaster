@@ -1,0 +1,36 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+html,body{height: 100%;}
+html,body{
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
+  color: $text-color;
+  background-color: $bg-color;
+  -webkit-text-size-adjust: 100%;
+}
+
+.l{
+  display: inline-block;
+  float: left !important;
+}
+
+.r{
+  display: inline-block;
+  float: right !important;
+}
+
+.clr:after{
+  content: '';
+  display: table;
+  clear: both;
+}

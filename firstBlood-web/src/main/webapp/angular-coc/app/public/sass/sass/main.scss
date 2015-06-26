@@ -1,0 +1,29 @@
+/* `scss` 变量 */
+$base-font-family: futura-pt-condensed,'Futura Cond',Helvetic,tahoma,arial,'Hiragino Sans GB',Microsoft Yahei,'Helvetica Neue',Helvetica,'Segoe UI',\5b8b\4f53,sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$text-color: #111;
+$bg-color: #606E7F;
+
+$grey: #B8B8B8;
+$grey-light: lighten($grey, 40%);
+$grey-dark: darken($grey, 25%);
+
+
+$spacing-unit: 30px;
+$border-radius: 3px;
+
+$sec: .3s;   //过度的秒
+$type: ease; //过度形式
+
+/* 引入基础样式 */
+@import 'screen';
+
+/* 引入组件样式 */
+@import 'component';
+
+/* login 样式 */
+@import 'login';
+
