@@ -23,6 +23,12 @@
 			<version>${cocMaster.version}</version>
 		</dependency>
 
+		<!-- base-common -->
+		<dependency>
+			<groupId>com.cocmaster</groupId>
+			<artifactId>firstBlood-base-common</artifactId>
+			<version>${cocMaster.version}</version>
+		</dependency>
 
 		<!-- add Impl here -->
 		<dependency>

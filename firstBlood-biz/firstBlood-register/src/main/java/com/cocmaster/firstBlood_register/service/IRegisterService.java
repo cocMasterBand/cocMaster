@@ -1,5 +1,7 @@
 package com.cocmaster.firstBlood_register.service;
 
+import com.cocmaster.firstBlood_base_common.model.Dto.UserRegisterCheck;
+
 /**
  * @author di
  * 注册服务
@@ -15,5 +17,6 @@ public interface IRegisterService {
 	 * 用户注册
 	 * @return int 用户id
 	 * */
-	public int userResgister();
+	public int userResgister(UserRegisterCheck userCheck);
+	
 }

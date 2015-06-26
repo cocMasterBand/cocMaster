@@ -19,8 +19,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cocMaster.version>0.0.1-SNAPSHOT</cocMaster.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.cocmaster</groupId>
+			<artifactId>firstBlood-base-common</artifactId>
+			<version>${cocMaster.version}</version>
+		</dependency>
 	</dependencies>
 </project>

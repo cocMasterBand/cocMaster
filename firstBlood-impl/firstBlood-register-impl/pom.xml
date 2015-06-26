@@ -17,18 +17,27 @@
 	<name>firstBlood-register-impl</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+		<cocMaster.version>0.0.1-SNAPSHOT</cocMaster.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.cocmaster</groupId>
 			<artifactId>firstBlood-register</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${cocMaster.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.cocmaster</groupId>
 			<artifactId>firstBlood-base-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${cocMaster.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.cocmaster</groupId>
+			<artifactId>firstBlood-util</artifactId>
+			<version>${cocMaster.version}</version>
 		</dependency>
 
 	</dependencies>
