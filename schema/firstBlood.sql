@@ -5,7 +5,7 @@ USE `cocmaster`;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
 	`userId` int(11) NOT NULL AUTO_INCREMENT,
-	`openId` int(11) NOT NULL COMMENT '微信的openid',
+	`openId` varchar(128) COMMENT '微信的openid',
 	`phone` varchar(32) NOT NULL DEFAULT '' COMMENT '手机号',
 	`isPhoneCheck` tinyint(4) NOT NULL DEFAULT -1 COMMENT '手机号是否通过验证 目前不验证 -1 wei yan zheng',
 	`salt` varchar(128) NOT NULL DEFAULT '#cocMaster666' COMMENT 'salt目前写死 原谅这么蠢 #cocMaster666',
@@ -35,4 +35,4 @@ CREATE TABLE `clan` (
 	`requiredTrophies` int(11) NOT NULL DEFAULT 0 COMMENT '部落站加入门槛奖杯数',
 	`location` int(11) NOT NULL DEFAULT 0 COMMENT '部落所在位置 0CHINA 1 OTHERS',
 	PRIMARY KEY(`clanId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENINE=InnoDB DEFAULT CHARSET=utf8;
