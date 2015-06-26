@@ -1,0 +1,90 @@
+.lg-pgtitle{
+  color: #FFF;
+  font-size: $base-font-size*1.25;
+  text-align: center;
+  padding: 10%;
+}
+
+.lg-tip{
+  background: #FFC63A;
+  color: darken($grey, 80%);
+}
+
+.lg-lgbox{
+  margin: 0 5%;
+  background: #FFF;
+  -webkit-user-select: none;
+
+  .lg-headbar{
+    li{
+      float: left;
+      width: 16.6667%;
+      height: 10px;
+    }
+    .lg-hederbar-ele-1{
+      background: #C4E17F;
+    }
+    .lg-hederbar-ele-2{
+      background: #F7FDCA;
+    }
+    .lg-hederbar-ele-3{
+      background: #FECF71;
+    }
+    .lg-hederbar-ele-4{
+      background: #F0776C;
+    }
+    .lg-hederbar-ele-5{
+      background: #DB9DBE;
+    }
+    .lg-hederbar-ele-6{
+      background: #C49CDE;
+    }
+
+    .lg-board{
+      background: #F7F7F7;
+      text-align: center;
+      h1{
+        padding: $spacing-unit;
+        font-size: $base-font-size;
+        color: $grey;
+      }
+    }
+  }
+
+  .lg-form{
+    padding: 5% 8% 10% 8%;
+
+    .valify-box{
+      width: 75%;
+    }
+
+    .valify-btn{
+      position: absolute;
+      right: 5px;
+      top: 12px;
+    }
+
+    i.fa{
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      color: $grey;
+    }
+
+    input{
+      border: 0;
+      outline: 0;
+      width: 75%;
+      height: 45px;
+      font-size: $base-font-size;
+      color: $grey-dark;
+    }
+
+    input[type="submit"]{
+      width: 100%;
+      height: 40px;
+      color: #FFF;
+    }
+
+  }
+}

@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* `scss` 变量 */
+/* 引入基础样式 */
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/sass/screen.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 9, ../sass/sass/screen.scss */
+html, body {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  font-family: futura-pt-condensed, "Futura Cond", Helvetic, tahoma, arial, "Hiragino Sans GB", Microsoft Yahei, "Helvetica Neue", Helvetica, "Segoe UI", \5b8b\4f53, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #111;
+  background-color: #606E7F;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 22, ../sass/sass/screen.scss */
+.l {
+  display: inline-block;
+  float: left !important;
+}
+
+/* line 27, ../sass/sass/screen.scss */
+.r {
+  display: inline-block;
+  float: right !important;
+}
+
+/* line 32, ../sass/sass/screen.scss */
+.clr:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* 引入组件样式 */
+/* 组件 scss 文件 */
+/* 按钮组件 */
+/* line 4, ../sass/sass/component.scss */
+.cbtn {
+  text-align: center;
+  background: white;
+  color: #111;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  outline: 0;
+}
+
+/* line 14, ../sass/sass/component.scss */
+.cbtn:active {
+  background: #e6e6e6;
+  box-shadow: inset 0px 0px 5px #C5C5C5;
+}
+
+/* line 19, ../sass/sass/component.scss */
+.red {
+  background: #F56D6B;
+  color: #FFF;
+}
+
+/* line 23, ../sass/sass/component.scss */
+.blue {
+  background: #1588FF;
+  color: #FFF;
+}
+
+/* line 28, ../sass/sass/component.scss */
+.disabled {
+  background: #e8ecf0;
+  color: #acacad;
+}
+
+/* 表单组件 */
+/* line 34, ../sass/sass/component.scss */
+form .form-group {
+  position: relative;
+  margin: 10px 0;
+}
+
+/* login 样式 */
+/* line 1, ../sass/sass/login.scss */
+.lg-pgtitle {
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  padding: 10%;
+}
+
+/* line 8, ../sass/sass/login.scss */
+.lg-tip {
+  background: #FFC63A;
+  color: black;
+}
+
+/* line 13, ../sass/sass/login.scss */
+.lg-lgbox {
+  margin: 0 5%;
+  background: #FFF;
+  -webkit-user-select: none;
+}
+/* line 19, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar li {
+  float: left;
+  width: 16.6667%;
+  height: 10px;
+}
+/* line 24, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-1 {
+  background: #C4E17F;
+}
+/* line 27, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-2 {
+  background: #F7FDCA;
+}
+/* line 30, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-3 {
+  background: #FECF71;
+}
+/* line 33, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-4 {
+  background: #F0776C;
+}
+/* line 36, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-5 {
+  background: #DB9DBE;
+}
+/* line 39, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-hederbar-ele-6 {
+  background: #C49CDE;
+}
+/* line 43, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-board {
+  background: #F7F7F7;
+  text-align: center;
+}
+/* line 46, ../sass/sass/login.scss */
+.lg-lgbox .lg-headbar .lg-board h1 {
+  padding: 30px;
+  font-size: 16px;
+  color: #B8B8B8;
+}
+/* line 54, ../sass/sass/login.scss */
+.lg-lgbox .lg-form {
+  padding: 5% 8% 10% 8%;
+}
+/* line 57, ../sass/sass/login.scss */
+.lg-lgbox .lg-form .valify-box {
+  width: 75%;
+}
+/* line 61, ../sass/sass/login.scss */
+.lg-lgbox .lg-form .valify-btn {
+  position: absolute;
+  right: 5px;
+  top: 12px;
+}
+/* line 67, ../sass/sass/login.scss */
+.lg-lgbox .lg-form i.fa {
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  color: #B8B8B8;
+}
+/* line 74, ../sass/sass/login.scss */
+.lg-lgbox .lg-form input {
+  border: 0;
+  outline: 0;
+  width: 75%;
+  height: 45px;
+  font-size: 16px;
+  color: #787878;
+}
+/* line 83, ../sass/sass/login.scss */
+.lg-lgbox .lg-form input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  color: #FFF;
+}
